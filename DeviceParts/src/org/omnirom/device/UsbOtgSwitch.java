@@ -23,12 +23,21 @@ import android.os.SystemProperties;
 import androidx.preference.Preference;
 import androidx.preference.Preference.OnPreferenceChangeListener;
 import androidx.preference.PreferenceManager;
+import android.provider.Settings;
 
 import org.omnirom.device.DeviceSettings;
 
 public class UsbOtgSwitch implements OnPreferenceChangeListener {
 
     private static final String FILE = "/sys/class/power_supply/usb/otg_switch";
+
+    public static final String SETTINGS_KEY = DeviceSettings.KEY_SETTINGS_PREFIX + DeviceSettings.KEY_OTG_SWITCH;
+
+    private Context mContext;
+
+    public UsbOtgSwitch(Context context) {
+        mContext = context;
+    }
 
     public static String getFile() {
         if (Utils.fileWritable(FILE)) {
@@ -48,6 +57,7 @@ public class UsbOtgSwitch implements OnPreferenceChangeListener {
     @Override
     public boolean onPreferenceChange(Preference preference, Object newValue) {
         Boolean enabled = (Boolean) newValue;
+        Settings.System.putInt(mContext.getContentResolver(), SETTINGS_KEY, enabled ? 1 : 0);
         Utils.writeValue(getFile(), enabled ? "1" : "0");
         return true;
     }

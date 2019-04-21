@@ -22,12 +22,21 @@ import android.content.SharedPreferences;
 import androidx.preference.Preference;
 import androidx.preference.Preference.OnPreferenceChangeListener;
 import androidx.preference.PreferenceManager;
+import android.provider.Settings;
 
 import org.omnirom.device.DeviceSettings;
 
 public class HBMModeSwitch implements OnPreferenceChangeListener {
 
     private static final String FILE = "/sys/devices/platform/soc/ae00000.qcom,mdss_mdp/drm/card0/card0-DSI-1/hbm";
+
+    public static final String SETTINGS_KEY = DeviceSettings.KEY_SETTINGS_PREFIX + DeviceSettings.KEY_HBM_SWITCH;
+
+    private Context mContext;
+
+    public HBMModeSwitch(Context context) {
+        mContext = context;
+    }
 
     public static String getFile() {
         if (Utils.fileWritable(FILE)) {
@@ -47,6 +56,7 @@ public class HBMModeSwitch implements OnPreferenceChangeListener {
     @Override
     public boolean onPreferenceChange(Preference preference, Object newValue) {
         Boolean enabled = (Boolean) newValue;
+        Settings.System.putInt(mContext.getContentResolver(), SETTINGS_KEY, enabled ? 1 : 0);
         Utils.writeValue(getFile(), enabled ? "1" : "0");
         return true;
     }

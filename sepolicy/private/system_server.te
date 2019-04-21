@@ -14,3 +14,9 @@ allow system_server camera_data_file:file { read open getattr };
 
 #Smart charger
 allow system_server sysfs_battery_supply:file rw_file_perms;
+
+allow system_server sysfs_vibrator_omni:file rw_file_perms;
+allow system_server sysfs_vibrator_omni:dir search;
+
+allow system_server sysfs_usb_supply_omni:file rw_file_perms;
+allow system_server sysfs_usb_supply_omni:dir search;
