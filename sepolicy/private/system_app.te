@@ -15,3 +15,5 @@ allow system_app sysfs_vibrator_omni:dir search;
 
 allow system_app sysfs_usb_supply_omni:file rw_file_perms;
 allow system_app sysfs_usb_supply_omni:dir search;
+
+allow system_app omni_sysfs_drm:file rw_file_perms;
