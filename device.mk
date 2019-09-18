@@ -172,6 +172,10 @@ PRODUCT_COPY_FILES += \
 PRODUCT_PACKAGES += \
     DeviceParts
 
+# Pixel Livewallpapers
+PRODUCT_PACKAGES += \
+    WallpapersBReel2019
+
 # Telephony
 PRODUCT_PACKAGES += \
     ims-ext-common \
