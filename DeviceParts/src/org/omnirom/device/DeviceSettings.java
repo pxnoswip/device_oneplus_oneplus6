@@ -133,12 +133,12 @@ public class DeviceSettings extends PreferenceFragment implements
         mDt2wSwitch = (TwoStatePreference) findPreference(KEY_DT2W_SWITCH);
         mDt2wSwitch.setEnabled(DoubleTapSwitch.isSupported());
         mDt2wSwitch.setChecked(DoubleTapSwitch.isCurrentlyEnabled(this.getContext()));
-        mDt2wSwitch.setOnPreferenceChangeListener(new DoubleTapSwitch());
+        mDt2wSwitch.setOnPreferenceChangeListener(new DoubleTapSwitch(getContext()));
 
         mDc = (TwoStatePreference) findPreference(KEY_DC_SWITCH);
         mDc.setEnabled(DCDimmingSwitch.isSupported());
         mDc.setChecked(DCDimmingSwitch.isCurrentlyEnabled(this.getContext()));
-        mDc.setOnPreferenceChangeListener(new DCDimmingSwitch());
+        mDc.setOnPreferenceChangeListener(new DCDimmingSwitch(getContext()));
     }
 
     @Override

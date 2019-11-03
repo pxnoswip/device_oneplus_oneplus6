@@ -21,15 +21,22 @@ package org.omnirom.device;
 import android.content.Context;
 import android.content.SharedPreferences;
 import android.os.SystemProperties;
+import android.provider.Settings;
 import androidx.preference.Preference;
 import androidx.preference.Preference.OnPreferenceChangeListener;
 import androidx.preference.PreferenceManager;
 
 import org.omnirom.device.DeviceSettings;
 
-public class DoubleTapSwitch implements OnPreferenceChangeListener {
+public class DoubleTapSwitch implements OnPreferenceChangeListener{
 
     private static final String FILE = "/proc/touchpanel/double_tap_enable";
+    public static final String SETTINGS_KEY = DeviceSettings.KEY_SETTINGS_PREFIX + DeviceSettings.KEY_DT2W_SWITCH;
+    private Context mContext;
+
+    public DoubleTapSwitch(Context context) {
+        mContext = context;
+   }
 
     public static String getFile() {
         if (Utils.fileWritable(FILE)) {
@@ -49,6 +56,7 @@ public class DoubleTapSwitch implements OnPreferenceChangeListener {
     @Override
     public boolean onPreferenceChange(Preference preference, Object newValue) {
         Boolean enabled = (Boolean) newValue;
+        Settings.System.putInt(mContext.getContentResolver(), SETTINGS_KEY, enabled ? 1 : 0);
         Utils.writeValue(getFile(), enabled ? "1" : "0");
         return true;
     }

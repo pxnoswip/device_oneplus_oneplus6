@@ -69,6 +69,11 @@ public class Startup extends BroadcastReceiver {
             String vibrStrength = sharedPrefs.getString(DeviceSettings.KEY_VIBSTRENGTH, VibratorStrengthPreference.DEFAULT_VALUE); 
             Settings.System.putString(context.getContentResolver(), VibratorStrengthPreference.SETTINGS_KEY, vibrStrength);
 
+            enabled = sharedPrefs.getBoolean(DeviceSettings.KEY_DC_SWITCH, false);
+            Settings.System.putInt(context.getContentResolver(), DCDimmingSwitch.SETTINGS_KEY, enabled ? 1 : 0);
+
+            enabled = sharedPrefs.getBoolean(DeviceSettings.KEY_DT2W_SWITCH, false);
+            Settings.System.putInt(context.getContentResolver(), DoubleTapSwitch.SETTINGS_KEY, enabled ? 1 : 0);
             Settings.System.putInt(context.getContentResolver(), "omni_device_setting_imported", 1);
         }
     }
@@ -177,10 +182,10 @@ public class Startup extends BroadcastReceiver {
         enabled = Settings.System.getInt(context.getContentResolver(), UsbOtgSwitch.SETTINGS_KEY, 0) != 0;
         restore(UsbOtgSwitch.getFile(), enabled);
 
-        enabled = sharedPrefs.getBoolean(DeviceSettings.KEY_DT2W_SWITCH, false);
+        enabled =  Settings.System.getInt(context.getContentResolver(), DoubleTapSwitch.SETTINGS_KEY, 0) != 0;
         restore(DoubleTapSwitch.getFile(), enabled);
 
-        enabled = sharedPrefs.getBoolean(DeviceSettings.KEY_DC_SWITCH, false);
+        enabled =  Settings.System.getInt(context.getContentResolver(), DCDimmingSwitch.SETTINGS_KEY, 0) != 0;
         restore(DCDimmingSwitch.getFile(), enabled);
 
         VibratorStrengthPreference.restore(context);
