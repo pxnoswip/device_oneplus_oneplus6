@@ -160,11 +160,13 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
     OnePlusCamera \
     OnePlusGallery \
-    OnePlusCameraService
+    OnePlusCameraService \
+    OPScreenRecorder \
 
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/prebuilts/etc/permissions/privapp-permissions-oem.xml:system/etc/permissions/privapp-permissions-oem.xml \
-    $(LOCAL_PATH)/prebuilts/etc/sysconfig/hiddenapi-package-whitelist-oneplus.xml:system/etc/sysconfig/hiddenapi-package-whitelist-oneplus.xml
+    $(LOCAL_PATH)/prebuilts/etc/sysconfig/hiddenapi-package-whitelist-oneplus.xml:system/etc/sysconfig/hiddenapi-package-whitelist-oneplus.xml \
+    $(LOCAL_PATH)/prebuilts/etc/permissions/privapp-permissions-opscreenrecorder.xml:system/product/etc/permissions/privapp-permissions-opscreenrecorder.xml
 
 # Device Parts
 PRODUCT_PACKAGES += \
