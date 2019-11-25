@@ -69,7 +69,7 @@ import android.content.pm.ResolveInfo;
 import android.widget.Toast;
 import com.android.internal.os.DeviceKeyHandler;
 import com.android.internal.util.ArrayUtils;
-import com.android.internal.util.syberia.SyberiaUtils;
+import com.android.internal.util.nitrogen.NitrogenUtils;
 import com.android.internal.statusbar.IStatusBarService;
 
 import vendor.oneplus.camera.CameraHIDL.V1_0.IOnePlusCameraProvider;
@@ -312,7 +312,7 @@ public class KeyHandler implements DeviceKeyHandler {
             }
         }).startObserving("DEVPATH=/devices/platform/soc/soc:tri_state_key");
 
-        isOPCameraAvail = SyberiaUtils.isAvailableApp("com.oneplus.camera", context);
+        isOPCameraAvail = NitrogenUtils.isAvailableApp("com.oneplus.camera", context);
         if (isOPCameraAvail) {
             mClientObserver = new ClientPackageNameObserver(CLIENT_PACKAGE_PATH);
             mClientObserver.startWatching();
@@ -592,19 +592,19 @@ public class KeyHandler implements DeviceKeyHandler {
             mAudioManager.adjustSuggestedStreamVolume(AudioManager.ADJUST_LOWER,AudioManager.USE_DEFAULT_STREAM_TYPE,AudioManager.FLAG_SHOW_UI);
             return true;
         } else if (value.equals(AppSelectListPreference.BROWSE_SCROLL_DOWN_ENTRY)) {
-            SyberiaUtils.sendKeycode(KeyEvent.KEYCODE_PAGE_DOWN);
+            NitrogenUtils.sendKeycode(KeyEvent.KEYCODE_PAGE_DOWN);
             return true;
         } else if (value.equals(AppSelectListPreference.BROWSE_SCROLL_UP_ENTRY)) {
-            SyberiaUtils.sendKeycode(KeyEvent.KEYCODE_PAGE_UP);
+            NitrogenUtils.sendKeycode(KeyEvent.KEYCODE_PAGE_UP);
             return true;
         } else if (value.equals(AppSelectListPreference.NAVIGATE_BACK_ENTRY)) {
-            SyberiaUtils.sendKeycode(KeyEvent.KEYCODE_BACK);
+            NitrogenUtils.sendKeycode(KeyEvent.KEYCODE_BACK);
             return true;
         } else if (value.equals(AppSelectListPreference.NAVIGATE_HOME_ENTRY)) {
-            SyberiaUtils.sendKeycode(KeyEvent.KEYCODE_HOME);
+            NitrogenUtils.sendKeycode(KeyEvent.KEYCODE_HOME);
             return true;
         } else if (value.equals(AppSelectListPreference.NAVIGATE_RECENT_ENTRY)) {
-            SyberiaUtils.sendKeycode(KeyEvent.KEYCODE_APP_SWITCH);
+            NitrogenUtils.sendKeycode(KeyEvent.KEYCODE_APP_SWITCH);
             return true;
         }
         return false;
