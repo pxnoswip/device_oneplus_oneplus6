@@ -63,9 +63,9 @@ BOARD_KERNEL_SEPARATED_DTBO := true
 NEED_KERNEL_MODULE_SYSTEM := true
 TARGET_KERNEL_ARCH := arm64
 TARGET_KERNEL_SOURCE := kernel/oneplus/sdm845
-TARGET_KERNEL_CONFIG := syberia_defconfig
-KERNEL_TOOLCHAIN := $(ANDROID_TOP)/prebuilts/gcc/linux-x86/aarch64/aarch64-linux-android-9.1/bin
-TARGET_KERNEL_CROSS_COMPILE_PREFIX := aarch64-elf-
+TARGET_KERNEL_CONFIG := omni_oneplus6_defconfig
+#KERNEL_TOOLCHAIN := $(ANDROID_TOP)/prebuilts/gcc/linux-x86/aarch64/aarch64-linux-android-9.1/bin
+#TARGET_KERNEL_CROSS_COMPILE_PREFIX := aarch64-elf-
 # TARGET_KERNEL_CLANG_COMPILE := true
 # TARGET_KERNEL_CLANG_VERSION := 9.0.3
 
