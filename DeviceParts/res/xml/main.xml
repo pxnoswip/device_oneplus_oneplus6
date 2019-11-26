@@ -40,6 +40,16 @@
         android:title="@string/otg_switch_title"
         android:persistent="false" />
 
+   <SwitchPreference
+        android:key="dc_switch"
+        android:summary="@string/dcdimming_summary"
+        android:title="@string/dcdimming_title" />
+
+   <SwitchPreference
+        android:key="dt2w_switch"
+        android:summary="@string/dt2w_summary"
+        android:title="@string/dt2w_title" />
+
     <PreferenceCategory
         android:title="@string/category_vibrator">
         <org.omnirom.device.VibratorStrengthPreference
@@ -47,7 +57,7 @@
             android:title="@string/vib_strength_title_head"
             android:summary="@string/vib_strength_summary_head"
             android:persistent="false" />
-        <org.omnirom.device.VibratorCallStrengthPreference
+ <!--       <org.omnirom.device.VibratorCallStrengthPreference
             android:key="vib_call_strength"
             android:title="@string/vib_call_strength_title_head"
             android:summary="@string/vib_call_strength_summary_head"
@@ -56,7 +66,7 @@
             android:key="vib_notif_strength"
             android:title="@string/vib_notif_strength_title_head"
             android:summary="@string/vib_notif_strength_summary_head"
-            android:persistent="false" />
+            android:persistent="false" /> -->
     </PreferenceCategory>
 
     <PreferenceCategory
@@ -80,17 +90,6 @@
             android:entryValues="@array/slider_key_action_values"
             android:persistent="false" />
     </PreferenceCategory>
-
-
-   <SwitchPreference
-        android:key="dc_switch"
-        android:summary="@string/dcdimming_summary"
-        android:title="@string/dcdimming_title" />
-
-   <SwitchPreference
-        android:key="dt2w_switch"
-        android:summary="@string/dt2w_summary"
-        android:title="@string/dt2w_title" />
 
 <!--    <PreferenceCategory
         android:title="@string/buttons_title"
