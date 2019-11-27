@@ -156,10 +156,6 @@ PRODUCT_PACKAGES += \
     vendor.oneplus.camera.CameraHIDL@1.0-adapter-helper \
     vendor.oneplus.camera.CameraHIDL-V1.0-java
 
-# Power
-PRODUCT_PACKAGES += \
-    power.qcom:64
-
 # Prebuilts
 PRODUCT_PACKAGES += \
     OnePlusCamera \
@@ -202,7 +198,7 @@ PRODUCT_PACKAGES_DEBUG += \
     update_engine_client
 
 #QTI performance
-#PRODUCT_BOOT_JARS += \
+PRODUCT_BOOT_JARS += \
     QPerformance \
     UxPerformance
 
