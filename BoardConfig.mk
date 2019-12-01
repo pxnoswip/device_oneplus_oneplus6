@@ -63,11 +63,11 @@ BOARD_KERNEL_SEPARATED_DTBO := true
 NEED_KERNEL_MODULE_SYSTEM := true
 TARGET_KERNEL_ARCH := arm64
 TARGET_KERNEL_SOURCE := kernel/oneplus/sdm845
-TARGET_KERNEL_CONFIG := omni_oneplus6_defconfig
+TARGET_KERNEL_CONFIG := pixen_defconfig
 #KERNEL_TOOLCHAIN := $(ANDROID_TOP)/prebuilts/gcc/linux-x86/aarch64/aarch64-linux-android-9.1/bin
 #TARGET_KERNEL_CROSS_COMPILE_PREFIX := aarch64-elf-
-# TARGET_KERNEL_CLANG_COMPILE := true
-# TARGET_KERNEL_CLANG_VERSION := 9.0.3
+#TARGET_KERNEL_CLANG_COMPILE := true
+#TARGET_KERNEL_CLANG_VERSION := r353983c
 
 # Enable real time lockscreen charging current values
 BOARD_GLOBAL_CFLAGS += -DBATTERY_REAL_INFO
