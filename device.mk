@@ -96,7 +96,6 @@ PRODUCT_PACKAGES += \
     init.qcom.rc \
     init.performance.rc \
     init.recovery.qcom.rc \
-    init.qcom.post_boot.sh \
     ueventd.qcom.rc
 
 # Dex
