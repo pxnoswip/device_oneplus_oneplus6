@@ -176,7 +176,7 @@ public class Startup extends BroadcastReceiver {
         enabled = Settings.System.getInt(context.getContentResolver(), UsbOtgSwitch.SETTINGS_KEY, 0) != 0;
         restore(UsbOtgSwitch.getFile(), enabled);
 
-        enabled =  Settings.System.getInt(context.getContentResolver(), DoubleTapSwitch.SETTINGS_KEY, 0) != 0;
+        enabled =  Settings.System.getInt(context.getContentResolver(), DoubleTapSwitch.SETTINGS_KEY, 1) != 0;
         restore(DoubleTapSwitch.getFile(), enabled);
 
         enabled =  Settings.System.getInt(context.getContentResolver(), DCDimmingSwitch.SETTINGS_KEY, 0) != 0;
