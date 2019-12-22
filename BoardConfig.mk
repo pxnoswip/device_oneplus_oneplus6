@@ -25,6 +25,8 @@ HWUI_COMPILE_FOR_PERF := true
 # Use Snapdragon LLVM, if available
 TARGET_USE_SDCLANG := true
 
+BUILD_BROKEN_DUP_RULES := true
+
 TARGET_SPECIFIC_HEADER_PATH := $(VENDOR_PATH)/include
 
 # Architecture
