@@ -25,7 +25,7 @@
 #include "PictureAdjustment.h"
 #include "SunlightEnhancement.h"
 
-#define SDM_DISP_LIB "libsdm-disp-apis.qti.so"
+#define SDM_DISP_LIB "libsdm-disp-apis.so"
 
 using ::vendor::lineage::livedisplay::V2_0::IDisplayModes;
 using ::vendor::lineage::livedisplay::V2_0::ISunlightEnhancement;
