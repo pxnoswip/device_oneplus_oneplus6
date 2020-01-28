@@ -72,7 +72,7 @@ public class DeviceSettings extends PreferenceFragment implements
     private ListPreference mSliderModeTop;
     private ListPreference mSliderModeCenter;
     private ListPreference mSliderModeBottom;
-    private static TwoStatePreference mHBMModeSwitch;
+/**    private static TwoStatePreference mHBMModeSwitch; **/
     //private PreferenceCategory buttonCategory;
     private static TwoStatePreference mOtgSwitch;
     private static TwoStatePreference mDt2wSwitch;
@@ -118,11 +118,11 @@ public class DeviceSettings extends PreferenceFragment implements
         mSliderModeBottom.setValueIndex(valueIndex);
         mSliderModeBottom.setSummary(mSliderModeBottom.getEntries()[valueIndex]);
 
-        mHBMModeSwitch = (TwoStatePreference) findPreference(KEY_HBM_SWITCH);
+/**        mHBMModeSwitch = (TwoStatePreference) findPreference(KEY_HBM_SWITCH);
         mHBMModeSwitch.setEnabled(HBMModeSwitch.isSupported());
         mHBMModeSwitch.setChecked(HBMModeSwitch.isCurrentlyEnabled(this.getContext()));
         mHBMModeSwitch.setOnPreferenceChangeListener(new HBMModeSwitch(getContext()));
-
+**/
         mOtgSwitch = (TwoStatePreference) findPreference(KEY_OTG_SWITCH);
         mOtgSwitch.setEnabled(UsbOtgSwitch.isSupported());
         mOtgSwitch.setChecked(UsbOtgSwitch.isCurrentlyEnabled(this.getContext()));
