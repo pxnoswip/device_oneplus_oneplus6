@@ -73,23 +73,7 @@ PRODUCT_PACKAGES += \
 
 # Audio
 PRODUCT_PACKAGES += \
-    audio.a2dp.default \
-    libaudio-resampler \
-    libstagefright_softomx
-
-# Media
-PRODUCT_PACKAGES += \
-    libmediaplayerservice
-
-# Radio
-PRODUCT_PACKAGES += \
-    android.hardware.radio@1.0 \
-    android.hardware.radio@1.1 \
-    android.hardware.radio@1.2 \
-    android.hardware.radio@1.3 \
-    android.hardware.radio@1.4 \
-    android.hardware.radio.config@1.0 \
-    android.hardware.radio.deprecated@1.0
+    audio.a2dp.default
 
 # Remove unwanted packages
 PRODUCT_PACKAGES += \
